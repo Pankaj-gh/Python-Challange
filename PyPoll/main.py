@@ -28,19 +28,45 @@ print(voter_set)
 
 print("*"*80)
 print("Calculating total votes for each candidate")
-li = 0
-correy = 0
-otooley = 0
-khan = 0
 
+voter_bank={}
+li_vote=0
+correy_vote = 0
+otooley_vote = 0
+khan_vote = 0
 for row in py_poll:
-    if row[2] == 'Khan':
-        khan+=1
+    if row[2]=='Khan':
+        khan_vote+=1
+        voter_bank['Khan']=khan_vote
     elif row[2]=='Li':
-        li+=1
+        li_vote+=1
+        voter_bank['Li']=li_vote
     elif row[2]=='Correy':
-
-        correy+=1
+        correy_vote+=1
+        voter_bank['Correy']=correy_vote
     elif row[2]=="O'Tooley":
-        otooley +=1
-print(li,correy,otooley,khan)
+        otooley_vote+=1
+        voter_bank["O'Tooley"]=otooley_vote
+
+
+
+print(voter_bank)
+voter_precent=0
+s=[]
+
+for v in voter_bank.values():
+    s.append((v/total_votes)*100)
+
+print(s)
+    
+khan_percent = (voter_bank['Khan']/total_votes)*100
+
+li_percent = (voter_bank['Li']/total_votes)*100
+
+otooley_percent = (voter_bank["O'Tooley"]/total_votes)*100
+
+correy_percent = (voter_bank['Correy']/total_votes)*100
+
+print(round(khan_percent,2), round(otooley_percent,2),round(li_percent,2),round(correy_percent,2))
+
+
