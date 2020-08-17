@@ -20,6 +20,10 @@ print(len(months))
 
 #Net Profit/Loss
 
-pl= [(row[1]) for row in bankfile]
-print(sum(pl))
+convertrow = [int(row[1]) for row in bankfile]
+netpl= sum(convertrow)
+print(netpl)
+
+
+
 
