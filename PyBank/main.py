@@ -36,8 +36,9 @@ print(avgchange)
 bankfileconverted = [[row[0],int(row[1])] for row in bankfile]
 #print(bankfileconverted)
 maxprofit= max(bankfileconverted, key=lambda y:y[1])
-#print(maxprofit)
-#print(y)
+print(maxprofit)
+y = maxprofit[1]
+print(y)
 ind=0
 #finding index value of maxprofit
 for i in range(len(convertrow)):
@@ -58,8 +59,8 @@ print("Greatest Increase in Profits: " + bankfileconverted[ind][0] + " (${})".fo
 
 maxloss= min(bankfileconverted,key=lambda z:z[1])
 print(maxloss)
-
-#print(z)
+z=maxloss[1]
+print(z)
 lossind = 0
 
 for i in range(len(convertrow)):
