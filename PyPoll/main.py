@@ -57,7 +57,7 @@ s=[]
 for v in voter_bank.values():
     s.append((v/total_votes)*100)
 
-print(s)
+#print(s)
     
 khan_percent = round((voter_bank['Khan']/total_votes)*100,2)
 ans1 = "Khan : {}% ({})".format(khan_percent,khan_vote)
@@ -71,6 +71,11 @@ ans4 = "O'Tooley : {}% ({})".format(otooley_percent,otooley_vote)
 
 correy_percent = round((voter_bank['Correy']/total_votes)*100,2)
 ans2 = "Correy : {}% ({})".format(correy_percent,correy_vote)
+
+inverse = [(value,key) for key,value in voter_bank.items()]
+winner = max(inverse)[1]
+ans5 = "Winner : {}".format(winner)
+
 
 
 
