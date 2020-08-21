@@ -5,7 +5,7 @@ file_path = os.path.join('Resources','election_data.csv')
 with open(file_path,'r') as mainfile:
     pypoll = csv.reader(mainfile, delimiter=',')
     header = next(pypoll)
-    print(header)
+    #print(header)
 
     py_poll=[]
     for line in pypoll:
@@ -24,7 +24,7 @@ ans= "Total Votes: {}".format(total_votes)
 voter_set = set()
 for row in py_poll:
     voter_set.add(row[2])
-print(voter_set)
+#print(voter_set)
 #------------------------------------------------------------------
 
 #Calculating Total Votes
@@ -86,3 +86,10 @@ answer=(" \n {} \n \n {} \n {} \n {} \n\n {} \n {} \n {} \n {} \n\n {} \n {} \n 
 print(answer)
 
 #---------------------------------------------------------------
+
+#Expoerting .txt to appropriate Destination
+
+
+txt_path = os.path.join("Analysis","PyPoll_Results.txt")
+with open(txt_path,'w') as f:
+    f.write(answer)
