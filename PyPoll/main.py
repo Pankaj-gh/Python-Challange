@@ -10,7 +10,7 @@ with open(file_path,'r') as mainfile:
     py_poll=[]
     for line in pypoll:
         py_poll.append(line)
- #--------------------------------------------------------------------   
+#--------------------------------------------------------------------   
 #Calculating Total votes
 
 heading = "Election Results"
@@ -19,17 +19,15 @@ lines = "*"*80
 
 total_votes = len(py_poll)
 ans= "Total Votes: {}".format(total_votes)
+#-------------------------------------------------------------------
 
-print(py_poll[0:3])
 voter_set = set()
 for row in py_poll:
     voter_set.add(row[2])
 print(voter_set)
+#------------------------------------------------------------------
 
-
-
-print("*"*80)
-print("Calculating total votes for each candidate")
+#Calculating Total Votes
 
 voter_bank={}
 li_vote=0
@@ -52,7 +50,7 @@ for row in py_poll:
 
 
 
-print(voter_bank)
+#print(voter_bank)
 voter_precent=0
 s=[]
 
@@ -62,13 +60,17 @@ for v in voter_bank.values():
 print(s)
     
 khan_percent = (voter_bank['Khan']/total_votes)*100
+ans1 = "Khan : {}% ({})".format(round(khan_percent,2),khan_vote)
 
-li_percent = (voter_bank['Li']/total_votes)*100
 
-otooley_percent = (voter_bank["O'Tooley"]/total_votes)*100
+li_percent = round((voter_bank['Li']/total_votes)*100,2)
+ans3 = "Li : {}% ({})".format(li_percent,li_vote)
 
-correy_percent = (voter_bank['Correy']/total_votes)*100
+otooley_percent = round((voter_bank["O'Tooley"]/total_votes)*100,2)
+ans4 = "O'Tooley : {}% ({})".format(otooley_percent,otooley_vote)
 
-print(round(khan_percent,2), round(otooley_percent,2),round(li_percent,2),round(correy_percent,2))
+correy_percent = round((voter_bank['Correy']/total_votes)*100,2)
+ans2 = "Correy : {}% ({})".format(correy_percent,correy_vote)
+
 
 
