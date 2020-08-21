@@ -48,7 +48,7 @@ for row in py_poll:
         otooley_vote+=1
         voter_bank["O'Tooley"]=otooley_vote
 
-
+#-----------------------------------------------------------------
 
 #print(voter_bank)
 voter_precent=0
@@ -58,7 +58,10 @@ for v in voter_bank.values():
     s.append((v/total_votes)*100)
 
 #print(s)
-    
+#----------------------------------------------------------------
+ 
+#Calculating Voter Percent
+   
 khan_percent = round((voter_bank['Khan']/total_votes)*100,2)
 ans1 = "Khan : {}% ({})".format(khan_percent,khan_vote)
 
@@ -75,8 +78,11 @@ ans2 = "Correy : {}% ({})".format(correy_percent,correy_vote)
 inverse = [(value,key) for key,value in voter_bank.items()]
 winner = max(inverse)[1]
 ans5 = "Winner : {}".format(winner)
+#-----------------------------------------------------------------
+
+#Declaring all answers to single varibale
 
 answer=(" \n {} \n \n {} \n {} \n {} \n\n {} \n {} \n {} \n {} \n\n {} \n {} \n {}".format(heading,lines,ans,lines, ans1,ans2,ans3,ans4,lines,ans5,lines))
 print(answer)
 
-
+#---------------------------------------------------------------
