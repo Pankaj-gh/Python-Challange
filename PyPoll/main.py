@@ -10,13 +10,15 @@ with open(file_path,'r') as mainfile:
     py_poll=[]
     for line in pypoll:
         py_poll.append(line)
-    
+ #--------------------------------------------------------------------   
 #Calculating Total votes
-print("*"*80)
-print("Calculating total number of votes")
+
+heading = "Election Results"
+lines = "*"*80
+
 
 total_votes = len(py_poll)
-print("Total Votes: {}".format(total_votes))
+ans= "Total Votes: {}".format(total_votes)
 
 print(py_poll[0:3])
 voter_set = set()

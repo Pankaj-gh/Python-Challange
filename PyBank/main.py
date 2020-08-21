@@ -19,27 +19,27 @@ with open (file_path,'r') as csvfile:
 
 heading=("Financial Analysis")
 ans= ("-"*50)
-print(heading)
-print(ans)
-#-------------------------------------------------------
+#print(heading)
+#print(ans)
+#-------------------------------------------------------*
 
 
 #Calculating Total Months
 months = [row[0] for row in bankfile]
 
 ans1=("Total Months: {}".format(len(months)))
-print(ans1)
+#print(ans1)
 
-#-------------------------------------------------------
+#-------------------------------------------------------*
 
 
 #Calculating Total Amount
 convertrow = [int(row[1]) for row in bankfile]
 netpl= sum(convertrow)
 ans2=("Total: ${}".format(netpl))
-print(ans2)
+#print(ans2)
 
-#------------------------------------------------------
+#------------------------------------------------------*
 
 
 #Calculating Avg of Change in Profit/Loss
@@ -47,9 +47,9 @@ change = convertrow[-1]-convertrow[0]
 #print(change)
 avgchange = (change / (len(convertrow)-1))
 ans3=('Average Change: ${}'.format(round(avgchange,2)))
-print(ans3)
+#print(ans3)
 
-#------------------------------------------------------
+#------------------------------------------------------*
 
 #Calculating Greatest Increase in Profit
 bankfileconverted = [[row[0],int(row[1])] for row in bankfile]      
@@ -73,9 +73,9 @@ for i in range(len(convertrow)):
 
 greatest_profit_increase = convertrow[ind]-convertrow[ind-1]
 ans4=("Greatest Increase in Profits: " + bankfileconverted[ind][0] + " (${})".format(greatest_profit_increase))
-print(ans4)
+#print(ans4)
 
-#-------------------------------------------------------
+#-------------------------------------------------------*
 #Calclulating Decrease in Profits
 maxloss= min(bankfileconverted,key=lambda z:z[1])
 z=maxloss[1]
@@ -91,9 +91,9 @@ for i in range(len(convertrow)):
 
 greatest_profit_decrease = convertrow[lossind]-convertrow[lossind-1]
 ans5=("Greatest Decrease in Profits: " + bankfileconverted[lossind][0] + " (${})".format(greatest_profit_decrease))
-print(ans5)
+#print(ans5)
 
-#------------------------------------------------------------
+#------------------------------------------------------------*
 
 #Adding All Solutions to a single variable
 
