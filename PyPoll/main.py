@@ -14,7 +14,7 @@ with open(file_path,'r') as mainfile:
 #Calculating Total votes
 
 heading = "Election Results"
-lines = "*"*80
+lines = "-"*55
 
 
 total_votes = len(py_poll)
@@ -76,6 +76,7 @@ inverse = [(value,key) for key,value in voter_bank.items()]
 winner = max(inverse)[1]
 ans5 = "Winner : {}".format(winner)
 
-
+answer=("{}\n \n{} \n{} \n{} \n{} \n{} \n{} \n{} \n{} \n{} \n{}".format(heading,lines,ans,lines, ans1,ans2,ans3,ans4,lines,ans5,lines))
+print(answer)
 
 
