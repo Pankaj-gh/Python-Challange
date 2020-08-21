@@ -48,9 +48,8 @@ for row in py_poll:
         otooley_vote+=1
         voter_bank["O'Tooley"]=otooley_vote
 
-#-----------------------------------------------------------------
-
 #print(voter_bank)
+#-----------------------------------------------------------------
 voter_precent=0
 s=[]
 
@@ -60,7 +59,7 @@ for v in voter_bank.values():
 #print(s)
 #----------------------------------------------------------------
  
-#Calculating Voter Percent
+#Calculating Voter Percent for each candidate
    
 khan_percent = round((voter_bank['Khan']/total_votes)*100,2)
 ans1 = "Khan : {}% ({})".format(khan_percent,khan_vote)
@@ -88,7 +87,6 @@ print(answer)
 #---------------------------------------------------------------
 
 #Expoerting .txt to appropriate Destination
-
 
 txt_path = os.path.join("Analysis","PyPoll_Results.txt")
 with open(txt_path,'w') as f:
