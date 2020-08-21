@@ -59,8 +59,8 @@ for v in voter_bank.values():
 
 print(s)
     
-khan_percent = (voter_bank['Khan']/total_votes)*100
-ans1 = "Khan : {}% ({})".format(round(khan_percent,2),khan_vote)
+khan_percent = round((voter_bank['Khan']/total_votes)*100,2)
+ans1 = "Khan : {}% ({})".format(khan_percent,khan_vote)
 
 
 li_percent = round((voter_bank['Li']/total_votes)*100,2)
